@@ -5,10 +5,10 @@
 }
 
 .header {
-    position: relative;
-    display: flex;
-    align-items: right;
-    padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: right;
+  padding: 20px;
 }
 
 .menu {
