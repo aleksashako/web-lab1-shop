@@ -8,30 +8,28 @@
         <h1>Ugly things store</h1>
         <h4>ugly doesn't mean unwanted</h4>
     </header>
-    <nav>
-        <ul>
-			<li>
-				<a href="#" onclick=
-				"changeContent('store')">
-				about store
-				</a>
-			</li>
-            <li>
-                <a href="#" onclick=
-				"changeContent('new')">
-					new
-				</a>
-            </li>
-            <li>
-                <a href="#" onclick=
-				"changeContent('catalog')">
-					catalog
-				</a>
-            </li>
-		</ul>
-	</nav>
+    <ul class="navigation">
+        <li><a href="#" onclick="changeContent('store')">about store</a></li>
+        <li><a href="#" onclick="changeContent('new')">new</a></li>
+        <li><a href="#" onclick="changeContent('catalog')">catalog</a></li>
+  	</ul>
+
 
     <p>On this page, you can view the full list of products.</p>
-    <span class="products">Product 1</span>
+    <ul class="product-container">
+        <li class="product-card">
+            <h4>№1</h4></li>
+        <li class="product-card">
+            <h4>№2</h4></li>
+        <li class="product-card">
+            <h4>№3</h4></li>
+        <li class="product-card">
+            <h4>№4</h4></li>
+        <li class="product-card">
+            <h4>№5</h4></li>
+        <li class="product-card">
+            <h4>№6</h4></li>
+    </ul>
+      
 </body>   
 </html>
