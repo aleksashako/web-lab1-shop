@@ -67,8 +67,9 @@
 
 .modal-fav {
   display: none;
-  width: 100px;
-  height: 60px;
+  justify-content: center;
+  width: 350px;
+  height: 260px;
   background: orange;
   padding: 10px;
   position: relative;
