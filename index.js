@@ -47,7 +47,10 @@ function goBackToStart() {
 }
 
 document.onclick = event => {
-    console.log(event.target.classList)
+    // console.log(event.target.classList)
+    if (event.target.classList.contains('cart')) {
+        console.log(event.target.dataset.id)
+    }
 }
 
 
