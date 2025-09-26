@@ -1,9 +1,7 @@
 function changeContent(page) {
     const startContent = document.getElementById('startContent');
     const contentDiv = document.getElementById('content');
-    const backButton = document.getElementById('backButton');
     
-    backButton.style.display = 'block';
     startContent.style.display = 'none';
     contentDiv.style.display = 'block';
     
@@ -31,9 +29,7 @@ function changeContent(page) {
 function goBackToStart() {
     const startContent = document.getElementById('startContent');
     const contentDiv = document.getElementById('content');
-    const backButton = document.getElementById('backButton');
     
-    backButton.style.display = 'none';
     contentDiv.style.display = 'none';
     startContent.style.display = 'block';
 }
