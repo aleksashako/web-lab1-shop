@@ -3,7 +3,13 @@
   background-color: #f4f4f4; 
   padding: 0px;
 }
-   
+
+header {
+    position: relative;
+    display: flex;
+    align-items: right;
+    padding: 20px;
+}
 
 .navigation {
   display: flex;
@@ -40,4 +46,13 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   width: 300px; 
   overflow: hidden; 
+}
+
+.menu {
+  position: absolute;
+  right: 5%;
+  top: 20px;
+  display: flex;
+  gap: 10px;
+  font-size: 30pt;
 }

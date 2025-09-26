@@ -34,3 +34,7 @@ function goBackToStart() {
     startContent.style.display = 'block';
 }
 
+
+
+
+
