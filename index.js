@@ -36,6 +36,7 @@ function changeContent(page) {
         default:
             contentDiv.innerHTML = '<h2>Page not found!</h2>';
     }
+    
 }
 
 function goBackToStart() {

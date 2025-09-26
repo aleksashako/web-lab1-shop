@@ -9,7 +9,7 @@
     <header>
         <div class="menu">
             <button class="fav">&#10084;</button>
-            <button class="cart">&#128722;</button>
+            <button class="cart" onclick="openCart()">&#128722;</button>
         </div>
         <h1>Ugly things store</h1>
         <h4>ugly doesn't mean unwanted</h4>
@@ -66,9 +66,9 @@
                     <br><label>Phone number<input type="text" name="phone number"></label>
                 </fieldset>
                 <fieldset>
-                    <legend>Способ доставки</legend>
+                    <legend>Delivery type</legend>
                     <label><input type="radio" name="delivery" value="courier">Courier</label>
-                    <br><label><input type="radio" name="delivery" value="pickup">Pichup</label>
+                    <br><label><input type="radio" name="delivery" value="pickup">Pickup</label>
                 </fieldset>
 
                 <button>Order!</button>
