@@ -46,6 +46,9 @@ function goBackToStart() {
     startContent.style.display = 'block';
 }
 
+document.onclick = event => {
+    console.log(event.target.classList)
+}
 
 
 
