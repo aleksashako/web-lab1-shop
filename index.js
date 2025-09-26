@@ -1,3 +1,15 @@
+let modal_fav = document.querySelector('.modal-fav')
+let cross_fav = document.querySelector('.cross-fav')
+let btn_fav = document.querySelector('.fav')
+
+btn_fav.addEventListener('click', () => {
+    modal_fav.style.display = 'flex';
+})
+
+cross_fav.addEventListener('click', () => {
+    modal_fav.style.display = 'none';
+})
+
 function changeContent(page) {
     const startContent = document.getElementById('startContent');
     const contentDiv = document.getElementById('content');

@@ -65,3 +65,21 @@
   overflow: hidden; 
 }
 
+.modal-fav {
+  display: none;
+  width: 100px;
+  height: 60px;
+  background: orange;
+  padding: 10px;
+  position: relative;
+}
+
+.cross-fav {
+  position: absolute;
+  right: -5%;
+  height: -10%;
+  cursor: pointer;
+  font-size: 20pt
+}
+
+
