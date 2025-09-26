@@ -9,6 +9,9 @@
     <header>
         <h1>Ugly things store</h1>
         <h4>ugly doesn't mean unwanted</h4>
+        <button id="backButton" class="back-button" style="display: none;" onclick="goBackToStart()">
+            ← Back to Catalog
+        </button>
     </header>
     <nav> 
         <ul class="navigation">
@@ -21,7 +24,7 @@
     </nav>
     
 
-    <div id="content">
+    <div id="startContent">
         <p>On this page, you can view the full list of products.</p>
     <ul class="product-container">
         <li class="product-card">
@@ -44,6 +47,10 @@
         <li class="product-card">
             <h4>№6</h4></li>
     </ul>
+    </div>
+
+    <div id="content">
+
     </div>
     
     <script src="index.js"></script>  
