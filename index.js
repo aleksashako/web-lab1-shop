@@ -1,25 +1,23 @@
 function changeContent(page) {
-    const startScreen = document.getElementById('startScreen');
+    const startContent = document.getElementById('startContent');
     const contentDiv = document.getElementById('content');
     const backButton = document.getElementById('backButton');
     
     backButton.style.display = 'block';
-    startScreen.style.display = 'none';
+    startContent.style.display = 'none';
     contentDiv.style.display = 'block';
     
     switch (page) {
         case 'store':
             contentDiv.innerHTML = `
                 <h2>about store</h2>
-                <p>Welcome to the Ugly Things Store! We believe that ugly doesn't mean unwanted.</p>
-                <p>Here you can find unique items that others might overlook.</p>
+                <p>welcome to the Ugly Things Store! we believe that ugly doesn't mean unwanted.</p>
             `;
             break;
         case 'new':
             contentDiv.innerHTML = `
-                <h2>New Arrivals</h2>
-                <p>No new staff as for now(</p>
-                <p>Check back later for new ugly treasures!</p>
+                <h2>new arrivals</h2>
+                <p>no new staff as for now(</p>
             `;
             break;
         case 'catalog':
@@ -31,13 +29,12 @@ function changeContent(page) {
 }
 
 function goBackToStart() {
-    const startScreen = document.getElementById('startScreen');
+    const startContent = document.getElementById('startContent');
     const contentDiv = document.getElementById('content');
     const backButton = document.getElementById('backButton');
     
     backButton.style.display = 'none';
     contentDiv.style.display = 'none';
-    
-    startScreen.style.display = 'block';
+    startContent.style.display = 'block';
 }
 
