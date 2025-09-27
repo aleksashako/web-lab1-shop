@@ -1,4 +1,4 @@
-let things = [{
+const things = [{
     id: 1,
     image: "",
     title: "Ugly Vase",
@@ -121,7 +121,7 @@ function changeContent(page) {
             goBackToStart();
             return; 
         default:
-            contentDiv.innerHTML = '<h2>Page not found!</h2>';
+            contentDiv.innerHTML = '<h2>sorry, page not found!</h2>';
     }
 
 }
