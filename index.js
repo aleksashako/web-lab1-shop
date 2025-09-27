@@ -14,7 +14,7 @@ const things = [{
     },
     {
     id: 3,
-    image: "img/clock-without-arrows.jpg",
+    image: "../../img/clock-without-arrows.jpg",
     title: "Clock (Without Arrows)",
     description: "no comments.",
     price: 19,  
@@ -29,9 +29,9 @@ const things = [{
     {
     id: 5,
     image: "",
-    title: "Book Without Cover",
-    description: "still a good book though",
-    price: 6,  
+    title: "...",
+    description: "...",
+    price: 0,  
     }
 ];
 
