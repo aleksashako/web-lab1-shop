@@ -25,60 +25,72 @@
   	    </ul>
     </nav>
     
+    <main id="main-content">
+        <section id="startContent">
+            <p>Our Lolely Ugly Collection</p>
+            <ul class="thing-container" id="thing-list">
+                    //оно само заполняется через js 
+            </ul>
+        <section id="content" style="display: none;"></div>
+    </main>
+    
 
-    <div id="startContent">
-        <p>On this page, you can view the full list of products.</p>
-        <ul class="product-container">
-            <li class="product-card">
-                <div class="pr-image"></div>
-                <div class="pr-info">
-                    <h3 class="title">Ugly 1</h3>
-                    <p class="description">broken vase</p>
-                    <p class="price">not less that 100</p>
-                    <button class="add-to-fav-button" data-id="1">♡</button>
-                    <button class="add-to-cart-button" data-id="1">Add to cart</button>
-            </li>
-            <li class="product-card">
-                <h4>№2</h4></li>
-            <li class="product-card">
-                <h4>№3</h4></li>
-            <li class="product-card">
-                <h4>№4</h4></li>
-            <li class="product-card">
-                <h4>№5</h4></li>
-            <li class="product-card">
-                <h4>№6</h4></li>
-        </ul>
-
-        <div class='modal-fav'>
-            <div class="cross-fav">&#10008;</div>
+    <div id="fav-modal" class='modal'>
+        <div class="modal-content">
+            <span class="close"onclick="toggleFavModal()">&times;</span>
             <h1>favourites</h1>
-            <p>no fav things yet..</p>
-        </div>
+            <div id="fav-items">
+                <p>no fav things yet..</p>
+            </div>
+        </div>     
+    </div>
 
-        <div class='modal-form'>
-            <form>
+
+    <div id="cart-modal" class='modal'>
+        <div class="modal-content">
+            <span class="close"onclick="toggleCartModal()">&times;</span>
+            <h1>cart</h1>
+            <div id="cart-items">
+                <p>unfortunately, your cart is empty...</p>
+            </div>
+            <div class="cart-total">
+                <strong>total: $<span id="total-price">0</span></strong>
+            </div>
+            <button onclick="placeAnOrder">place an order</button>
+        </div>     
+    </div>
+
+    <div id="form-modal" class='modal'>
+        <div class="modal-content">
+            <span class="close" onclick="closeCheckoutForm()">&times;</span>
+            <h2>checkout</h2>
+            <form id="checkout-form">
                 <fieldset>
-                    <legend>User info</legend>
-                    <label>Name<input type="text" name="name"></label>
-                    <br><label>Surname<input type="text" name="surname"></label>
-                    <br><label>Address<input type="text" name="address"></label>
-                    <br><label>Phone number<input type="text" name="phone number"></label>
+                    <legend>user info</legend>
+                    <label>name<input type="text" name="name"></label>
+                    <br><label>surname<input type="text" name="surname"></label>
+                    <br><label>address<input type="text" name="address"></label>
+                    <br><label>phone number<input type="text" name="phone number"></label>
                 </fieldset>
                 <fieldset>
-                    <legend>Delivery type</legend>
-                    <label><input type="radio" name="delivery" value="courier">Courier</label>
-                    <br><label><input type="radio" name="delivery" value="pickup">Pickup</label>
+                    <legend>delivery type</legend>
+                    <label><input type="radio" name="delivery" value="courier">courier</label>
+                    <br><label><input type="radio" name="delivery" value="pickup">pickup</label>
                 </fieldset>
 
-                <button class="button-cart">Order!</button>
+                <button type="submit">order!</button>
             </form>
         </div>
-
-        
     </div>
-    <div id="content" style="display: none;"></div>
-    
+
+    <div id="order-success-modal" class="modal">
+        <div class="modal-content">
+            <h2>thank you!</h2>
+            <p>your order has been placed successfully!</p>
+            <button onclick="closeOrderSuccessModal()">continue shopping</button>
+        </div>
+    </div>
+
     <script src="index.js"></script>  
 </body>   
 </html>
