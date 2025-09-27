@@ -1,15 +1,15 @@
 const things = [{
     id: 1,
-    image: "",
+    image: 'img/ugly-vase.jpg',
     title: "Ugly Vase",
     description: "just a broken vase with a history",
     price: 15,
     },
     {
     id: 2,
-    image: "",
-    title: "Mug Without Saucer",
-    description: "it lost it's pair and feels lonely",
+    image: 'img/mug-without-handle.jpg',
+    title: "Mug Without Handle",
+    description: "it lost it's part and feels lonely",
     price: 8,  
     },
     {
@@ -21,17 +21,38 @@ const things = [{
     },
     {
     id: 4,
-    image: "",
+    image: 'img/book-without-cover.jpg',
     title: "Book Without Cover",
     description: "still a good book though",
     price: 6,  
     },
     {
     id: 5,
-    image: "",
-    title: "...",
-    description: "...",
-    price: 0,  
+    image: 'img/ugly-lamp.jpg',
+    title: "Ugly But Funny Lamp",
+    description: "a lot of colours are available",
+    price: 17,  
+    },
+    {
+    id: 6,
+    image: 'img/ugly-portrait.jpg',
+    title: "Ugly Portrait",
+    description: "can be painted based on your photo!",
+    price: 9,  
+    },
+    {
+    id: 7,
+    image: 'img/ugly-chair.jpg',
+    title: "Ugly and Uncomfortable Chair",
+    description: "try it",
+    price: 7,  
+    },
+    {
+    id: 8,
+    image: 'img/ugly-monster.jpg',
+    title: "Not Ugly Monster",
+    description: "random monster will be sent",
+    price: 13,  
     }
 ];
 
