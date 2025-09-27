@@ -1,13 +1,8 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .body {
   font-family: Arial, sans-serif; 
   background-color: #f4f4f4; 
   padding: 0px;
+  line-height: 1.6;
 }
 
 .header {
@@ -47,7 +42,7 @@
   
   list-style: none;
   margin: 0; 
-  background: rgb(6, 99, 130);
+  background: deepskyblue;
 }
 
 .navigation a {
@@ -58,7 +53,7 @@
 }
 
 .navigation a:hover {
-  background: #033d80;
+  background: #1565C0;
 }
 
 .thing-container {
@@ -76,6 +71,14 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   width: 300px; 
   overflow: hidden; 
+  position: relative;
+}
+
+.add-to-fav-button {
+  position: absolute;
+  right: 5%;
+  top: 20px;
+  background-color: #ffffff;
 }
 
 .th-image {
@@ -116,10 +119,6 @@
   margin-top: 5px;
 }
 
-.add-to-fav-button {
-  background-color: #e9bebe;
-  align-self: flex-start;
-}
 
 .add-to-cart-button {
   background-color: #1c0d47;
@@ -137,7 +136,7 @@
 .fieldset {
   margin: 0 0 20px;
   padding: 20px 15px;
-  border: 1px solid #ae63e4;
+  border: 1px solid #cc9fed;
 }
 
 .button-cart {
