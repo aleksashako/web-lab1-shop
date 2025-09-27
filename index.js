@@ -24,6 +24,10 @@ const things = [{
 let cart = [];
 let favs = [];
 
+document.addEventListener('DOMContentLoaded', function() {
+    renderThings();
+})
+
 function renderThings() {
     const thingList = document.getElementById('thing-list');
     thingList.innerHTML = '';
