@@ -169,6 +169,7 @@ function loadCartFromStorage() {
 
 function openCartModal() {
     const modal = document.getElementById('cart-modal');
+    updateCart();
     if (modal.style.display === 'block') {
         modal.style.display = 'none';
     } else {
