@@ -89,6 +89,7 @@ function addToCart(thingId) {
 
     saveCartToStorage();
     updateCart();
+    const button = document.querySelector(`.add-to-cart-button[data-id="${thingId}"]`);
 
     showNotification(`${thing.title} added to cart!`);
 }
