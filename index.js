@@ -70,10 +70,10 @@ function renderThings() {
 
 
 function addToCart(thingId) {
-    let thing = things.find(t => t.id === thingId);
+    const thing = things.find(t => t.id === thingId);
     if (!thing) return;
 
-    let existingItem = cart.find(item => item.id === thingId);
+    const existingItem = cart.find(item => item.id === thingId);
 
     if (existingItem) {
         existingItem.quantity += 1;
