@@ -26,6 +26,7 @@ let favs = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     renderThings();
+    loadCartFromStorage()
 });
 
 function renderThings() {
@@ -84,6 +85,60 @@ function addToCart(thingId) {
             quantity: 1
         });
     }
+
+    saveCartToStorage();
+    updateCart();
+}
+
+function removeFromCart(thingId) {
+    cart = cart.filter(item => item.id !== thingId);
+    saveCartToStorage();
+    updateCart();
+}
+
+function clearCart() {
+    cart = []
+    updateCart();
+    saveCartToStorage();
+}
+
+function calculateTotal() {
+    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+}
+
+function updateCart() {
+    const cartCount = document.getElementById('cart-count');
+    const totalPrice = document.getElementById('total-price');
+    const cartItems = document.getElementById('cart-items');
+    
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+    
+    totalPrice.textContent = calculateTotal().toFixed(2);
+    
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<div class="empty-state"><p>unfortunately, your cart is empty...</p></div>';
+        return;
+    }
+    
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+        const cartItemElement = document.createElement('div');
+        cartItemElement.className = 'cart-item';
+        cartItemElement.innerHTML = `
+            <div class="cart-item-info">
+                <h4>${item.title}</h4>
+                <p>$${item.price} x ${item.quantity}</p>
+            </div>
+            <div class="cart-item-controls">
+                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                <span>${item.quantity}</span>
+                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+            </div>
+        `;
+        cartItems.appendChild(cartItemElement);
+    });
 }
 
 function saveCartToStorage() {
@@ -94,6 +149,24 @@ function loadCartFromStorage() {
     const savedCart = localStorage.getItem('uglyThingsCart');
     if (savedCart) {
         cart = JSON.parse(savedCart);
+    }
+}
+
+function openCartModal() {
+    const modal = document.getElementById('cart-modal');
+    if (modal.style.display === 'block') {
+        modal.style.display = 'none';
+    } else {
+        modal.style.display = 'block';
+    }
+}
+
+function openFavModal() {
+    const modal = document.getElementById('fav-modal');
+    if (modal.style.display === 'block') {
+        modal.style.display = 'none';
+    } else {
+        modal.style.display = 'block';
     }
 }
 

@@ -8,8 +8,8 @@
 <body>
     <header>
         <div class="menu">
-            <button class="fav">&#10084;</button>
-            <button class="cart" onclick="">&#128722;</button>
+            <button class="fav" onclick="openFavModal()">&#10084;</button>
+            <button class="cart" onclick="openCartModal()">&#128722;</button>
         </div>
         <h1>Ugly things store</h1>
         <h4>ugly doesn't mean unwanted</h4>
@@ -35,7 +35,7 @@
     </main>
     
 
-    <!-- <div id="fav-modal" class='modal'>
+    <div id="fav-modal" class='modal'>
         <div class="modal-content">
             <span class="close"onclick="toggleFavModal()">&times;</span>
             <h1>favourites</h1>
@@ -43,10 +43,10 @@
                 <p>no fav things yet..</p>
             </div>
         </div>     
-    </div> -->
+    </div>
 
 
-    <!-- <div id="cart-modal" class='modal'>
+    <div id="cart-modal" class='modal'>
         <div class="modal-content">
             <span class="close"onclick="toggleCartModal()">&times;</span>
             <h1>cart</h1>
@@ -58,7 +58,7 @@
             </div>
             <button onclick="placeAnOrder">place an order</button>
         </div>     
-    </div> -->
+    </div>
 
     <!-- <div id="form-modal" class='modal'>
         <div class="modal-content">
