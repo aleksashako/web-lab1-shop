@@ -26,7 +26,8 @@ let favs = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     renderThings();
-    loadCartFromStorage()
+    loadCartFromStorage();
+    updateCart();
 });
 
 function renderThings() {
