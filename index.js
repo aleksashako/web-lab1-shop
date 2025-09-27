@@ -89,6 +89,8 @@ function addToCart(thingId) {
 
     saveCartToStorage();
     updateCart();
+
+    showNotification(`${thing.title} added to cart!`);
 }
 
 function removeFromCart(thingId) {
