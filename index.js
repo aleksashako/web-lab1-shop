@@ -26,7 +26,7 @@ let favs = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     renderThings();
-})
+});
 
 function renderThings() {
     const thingList = document.getElementById('thing-list');
