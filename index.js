@@ -40,8 +40,8 @@ function renderThings() {
         const thingCard = document.createElement('li');
         thingCard.className = 'thing-card';
         thingCard.innerHTML = `
-            <div class="pr-image" style="background-image: url('${thing.image}')"></div>
-            <div class="pr-info">
+            <div class="th-image" style="background-image: url('${thing.image}')"></div>
+            <div class="th-info">
                 <h3 class="title">${thing.title}</h3>
                 <p class="description">${thing.description}</p>
                 <p class="price">$${thing.price}</p>
