@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .body {
   font-family: Arial, sans-serif; 
   background-color: #f4f4f4; 
@@ -6,6 +12,7 @@
 
 .header {
   position: relative;
+  background-color: #fff;
   display: flex;
   align-items: right;
   padding: 20px;
@@ -26,6 +33,11 @@
   width: 45px;
   height: 45px;
   font-size: 20px;
+  border-radius: 20%;
+}
+
+.menu button:hover {
+  background-color: #e0e0e0;
 }
 
 .navigation {
@@ -35,7 +47,7 @@
   
   list-style: none;
   margin: 0; 
-  background: deepskyblue;
+  background: rgb(6, 99, 130);
 }
 
 .navigation a {
@@ -46,7 +58,7 @@
 }
 
 .navigation a:hover {
-  background: #1565C0;
+  background: #033d80;
 }
 
 .thing-container {
@@ -58,6 +70,7 @@
 }
 
 .thing-card {
+  display: flex;
   background-color: white;
   border-radius: 8px; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
@@ -66,51 +79,55 @@
 }
 
 .th-image {
-    height: 300px;
-    background-color: #ddd;
-    background-size: cover;
-    background-position: center;
+  height: 300px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
 }
 
 .th-info {
-    padding: 15px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .th-info h3 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .description {
-    color: #666;
-    flex-grow: 1;
-    margin-bottom: 10px;
+  color: #666;
+  flex-grow: 1;
+  margin-bottom: 10px;
 }
 
 .price {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
 }
 
-.modal-fav {
-  display: none;
-  justify-content: center;
-  width: 350px;
-  height: 260px;
-  background: orange;
+.add-to-fav-button, .add-to-cart-button {
   padding: 10px;
-  position: relative;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
 }
 
-.cross-fav {
-  position: absolute;
-  right: -5%;
-  height: -10%;
-  cursor: pointer;
-  font-size: 20pt
+.add-to-fav-button {
+  background-color: #e9bebe;
+  align-self: flex-start;
+}
+
+.add-to-cart-button {
+  background-color: #1c0d47;
+  color: white;
+}
+
+.add-to-cart-button:hover {
+    background-color: #0f0d3f;
 }
 
 .form {
@@ -131,25 +148,6 @@
   font-weight: bold;
   background: #47cf73;
   cursor: pointer;
-}
-
-.add-to-fav-button, .add-to-cart-button {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 5px;
-    transition: background-color 0.3s;
-}
-
-.add-to-fav-button {
-    background-color: #f8f8f8;
-    align-self: flex-start;
-}
-
-.add-to-cart-button {
-    background-color: #47cf73;
-    color: white;
 }
 
 .modal {
