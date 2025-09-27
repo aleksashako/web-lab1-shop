@@ -99,6 +99,7 @@
 }
 
 .description {
+  height: 60px;
   color: #666;
   flex-grow: 1;
   margin-bottom: 10px;
