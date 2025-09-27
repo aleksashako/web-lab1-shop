@@ -33,7 +33,7 @@ function renderThings() {
     thingList.innerHTML = '';
     
     things.forEach(thing => {
-        const isFavorited = favorites.some(fav => fav.id === thing.id);
+        const isFavorited = favs.some(fav => fav.id === thing.id);
         const favoriteClass = isFavorited ? 'active' : '';
         const favoriteSymbol = isFavorited ? '♥' : '♡';
         
@@ -78,9 +78,9 @@ function addToCart(thingId) {
         existingItem.quantity += 1;
     } else {
         cart.push({
-            id: product.id,
-            title: product.title,
-            price: product.price,
+            id: thing.id,
+            title: thing.title,
+            price: thing.price,
             quantity: 1
         });
     }
