@@ -2,22 +2,36 @@ const things = [{
     id: 1,
     image: "",
     title: "Ugly Vase",
-    description: "just a broken vase with history",
+    description: "just a broken vase with a history",
     price: 15,
     },
     {
     id: 2,
     image: "",
-    title: "Mug Without a Plate",
-    description: "it lost it's and feels lonely",
+    title: "Mug Without Saucer",
+    description: "it lost it's pair and feels lonely",
     price: 8,  
     },
     {
     id: 3,
-    image: "",
-    title: "Clock (Without Any Arrows)",
+    image: "/img/clock-without-arrows.jpg",
+    title: "Clock (Without Arrows)",
     description: "no comments.",
     price: 19,  
+    },
+    {
+    id: 4,
+    image: "",
+    title: "Book Without Cover",
+    description: "still a good book though",
+    price: 6,  
+    },
+    {
+    id: 5,
+    image: "",
+    title: "",
+    description: "still a good book though",
+    price: 6,  
     }
 ];
 
