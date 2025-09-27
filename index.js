@@ -170,6 +170,15 @@ function openFavModal() {
     }
 }
 
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName('modal');
+    for (let modal of modals) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+}
+
 
 //реализовать добавление и удаление из избранного (возможно по аналогии с корзиной, но пока не точно)
 
