@@ -37,7 +37,7 @@
 
     <div id="fav-modal" class='modal'>
         <div class="modal-content">
-            <span class="close"onclick="toggleFavModal()">&times;</span>
+            <span class="close"onclick="openFavModal()">&times;</span>
             <h1>favourites</h1>
             <div id="fav-items">
                 <p>no fav things yet..</p>
@@ -48,15 +48,15 @@
 
     <div id="cart-modal" class='modal'>
         <div class="modal-content">
-            <span class="close"onclick="toggleCartModal()">&times;</span>
-            <h1>cart</h1>
+            <span class="close"onclick="openCartModal()">&times;</span>
+            <h1>your cart</h1>
             <div id="cart-items">
                 <p>unfortunately, your cart is empty...</p>
             </div>
             <div class="cart-total">
                 <strong>total: $<span id="total-price">0</span></strong>
             </div>
-            <button onclick="placeAnOrder">place an order</button>
+            <!-- <button onclick="placeAnOrder()">place an order</button> -->
         </div>     
     </div>
 

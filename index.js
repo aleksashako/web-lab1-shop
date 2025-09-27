@@ -71,7 +71,7 @@ function renderThings() {
 
 function addToCart(thingId) {
     let thing = things.find(t => t.id === thingId);
-    if(!thing) return;
+    if (!thing) return;
 
     let existingItem = cart.find(item => item.id === thingId);
 
@@ -94,6 +94,20 @@ function removeFromCart(thingId) {
     cart = cart.filter(item => item.id !== thingId);
     saveCartToStorage();
     updateCart();
+}
+
+function updateQuantity(thingId, change) {
+    const item = cart.find(item => item.id === thingId);
+    if (!item) return;
+    
+    item.quantity += change;
+    
+    if (item.quantity <= 0) {
+        removeFromCart(thingId);
+    } else {
+        saveCartToStorage();
+        updateCart();
+    }
 }
 
 function clearCart() {
