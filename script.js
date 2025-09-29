@@ -114,9 +114,9 @@ function renderThings() {
     thingList.innerHTML = '';
     
     things.forEach(thing => {
-        let isFavorited = favs.some(fav => fav.id === thing.id);
-        let favoriteClass = isFavorited ? 'active' : '';
-        let favoriteSymbol = isFavorited ? '♥' : '♡';
+        const isFavorited = favs.some(fav => fav.id === thing.id);
+        const favoriteClass = isFavorited ? 'active' : '';
+        const favoriteSymbol = isFavorited ? '♥' : '♡';
         
         let thingCard = document.createElement('li');
         thingCard.className = 'thing-card';
@@ -143,7 +143,7 @@ function renderThings() {
     document.querySelectorAll('.add-to-fav-button').forEach(button => {
         button.addEventListener('click', function() {
             const thingId = parseInt(this.getAttribute('data-id'));
-            toggleFavorite(thingId, this);
+            addToFav(thingId);
         });
     });
 }
@@ -384,7 +384,6 @@ function updateFav() {
     });
 }
 
-//всё, что связано с формой
 function openCheckoutForm() {
     if (cart.length === 0) {
         alert('Your cart is empty!');
