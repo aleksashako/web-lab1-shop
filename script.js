@@ -176,7 +176,7 @@ function removeFromCart(thingId) {
 }
 
 function updateQuantity(thingId, change) {
-    let item = cart.find(item => item.id === thingId);
+    const item = cart.find(item => item.id === thingId);
     if (!item) return;
     
     item.quantity += change;
@@ -243,7 +243,7 @@ function updateAddToCartButtons() {
         const cartItem = cart.find(item => item.id === thingId);
         const quantity = cartItem ? cartItem.quantity : 0;
         
-        let countSpan = button.querySelector('.item-count');
+        const countSpan = button.querySelector('.item-count');
         
         if (quantity > 0) {
             if (!countSpan) {
