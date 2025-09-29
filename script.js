@@ -220,7 +220,7 @@ function updateCart() {
                 <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
                 <span>${item.quantity}</span>
                 <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-                <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+                <button class="remove-btn" onclick="removeFromCart(${item.id})">remove</button>
             </div>
         `;
         cartItems.appendChild(cartItemElement);
@@ -292,7 +292,97 @@ window.onclick = function(event) {
 
 
 //реализовать добавление и удаление из избранного (возможно по аналогии с корзиной, но пока не точно)
+function addToFav(thingId) {
+    const thing = things.find(t => t.id === thingId);
+    if (!thing) return;
 
+    const existingIndex = favs.findIndex(item => item.id === thingId);
+    const favButton = document.querySelector(`.add-to-fav-button[data-id="${thingId}"]`);
+
+    if (existingIndex !== -1) {
+        favs.splice(existingIndex, 1);
+        favButton.innerHTML = '♡';
+        favButton.classList.remove('active');
+    } else {
+        favs.push({
+            id: thing.id,
+            title: thing.title,
+            image: thing.image,
+        });
+        favButton.innerHTML = '♥';
+        favButton.classList.add('active');
+    }
+
+    saveFavoritesToStorage();
+    updateFav();
+  
+    const originalBackground = favButton.style.backgroundColor;
+    favButton.style.backgroundColor = '#ff6b6b';
+    favButton.style.color = 'white';
+    
+    setTimeout(() => {
+        favButton.style.backgroundColor = originalBackground;
+        if (existingIndex !== -1) {
+            favButton.style.color = '';
+        }
+    }, 300);
+}
+
+function removeFromFavourites(thingId) {
+    favs = favs.filter(fav => fav.id !== thingId);
+    saveFavoritesToStorage();
+    updateFav();
+    
+    const favButton = document.querySelector(`.add-to-fav-button[data-id="${thingId}"]`);
+    if (favButton) {
+        favButton.innerHTML = '♡';
+        favButton.classList.remove('active');
+    }
+}
+
+function saveFavoritesToStorage() {
+    localStorage.setItem('uglyThingsFavorites', JSON.stringify(favs));
+}
+
+function loadFavoritesFromStorage() {
+    const savedFavorites = localStorage.getItem('uglyThingsFavorites');
+    if (savedFavorites) {
+        favs = JSON.parse(savedFavorites);
+    }
+}
+
+function updateFav() {
+    const favCount = document.getElementById('fav-count');
+    const favItems = document.getElementById('fav-items');
+    
+    const totalFavItems = favs.reduce((sum, item) => sum + item.quantity, 0);
+    favCount.textContent = favs.length;
+    
+   
+    if (favs.length === 0) {
+        favItems.innerHTML = '<div class="empty-state"><p>unfortunately, you have not added anything to your favorites yet</p></div>';
+        return;
+    }
+    
+    favItems.innerHTML = '';
+    favs.forEach(item => {
+        const favItemElement = document.createElement('div');
+        favItemElement.className = 'fav-item';
+        favItemElement.innerHTML = `
+            <div class="fav-image" style="background-image: url('${item.image}')"></div>
+            <div class="fav-item-info">
+                <h4>${item.title}</h4>
+                
+            </div>
+            <div class="cart-item-controls">
+                <button class="remove-from-fav-btn" onclick="removeFromFavourites(${item.id})">remove</button>
+            </div>
+        `;
+        favItems.appendChild(favItemElement);
+    });
+}
+
+//всё, что связано с формой
 function openCheckoutForm() {
     if (cart.length === 0) {
         alert('Your cart is empty!');

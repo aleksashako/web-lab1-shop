@@ -47,6 +47,16 @@ header {
     top: -10px;
     right: -20%;
 }
+#fav-count {
+    background-color: pink;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    position: relative;
+    top: -10px;
+    right: -20%;
+}
 
 .navigation {
   display: flex;
@@ -184,18 +194,67 @@ header {
     animation: slideIn 0.3s;
 }
 
-.move-to-cart-btn {
-    background-color: #47cf73;
-    color: white;
+.add-to-fav-button {
+    position: absolute;
+    right: 5%;
+    top: 320px;
+    background-color: #ffffff;
     border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
     cursor: pointer;
-    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
-.remove-fav-btn {
-    background-color: #ff4444;
+.add-to-fav-button.active {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.add-to-fav-button:hover {
+    background-color: #f0f0f0;
+}
+
+.add-to-fav-button.active:hover {
+    background-color: #ff5252;
+}
+
+.fav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.fav-image {
+  height: 10px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.fav-item-info {
+    flex-grow: 1;
+}
+
+.fav-item-info h4 {
+    margin-bottom: 5px;
+}
+
+.fav-item-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.remove-from-fav-btn {
+    background-color: #680808;
     color: white;
     border: none;
     padding: 8px 15px;
@@ -254,7 +313,7 @@ header {
 }
 
 .remove-btn {
-    background-color: #ff4444;
+    background-color: #680808;
     color: white;
     border: none;
     padding: 5px 10px;
