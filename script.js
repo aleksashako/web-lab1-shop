@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function changeContent(page) {
-    let startContent = document.getElementById('startContent');
-    let contentDiv = document.getElementById('content');
+    const startContent = document.getElementById('startContent');
+    const contentDiv = document.getElementById('content');
     
     startContent.style.display = 'none';
     contentDiv.style.display = 'block';
@@ -100,8 +100,8 @@ function changeContent(page) {
 }
 
 function goBackToStart() {
-    let startContent = document.getElementById('startContent');
-    let contentDiv = document.getElementById('content');
+    const startContent = document.getElementById('startContent');
+    const contentDiv = document.getElementById('content');
     
     contentDiv.style.display = 'none';
     startContent.style.display = 'block';
@@ -201,9 +201,9 @@ function calculateTotal() {
 }
 
 function updateCart() {
-    let cartCount = document.getElementById('cart-count');
-    let totalPrice = document.getElementById('total-price');
-    let cartItems = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const totalPrice = document.getElementById('total-price');
+    const cartItems = document.getElementById('cart-items');
     
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
