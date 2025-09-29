@@ -278,13 +278,13 @@ header {
     font-weight: bold;
 }
 
-.label {
+label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.input[type="text"] {
+input[type="text"] {
     width: 90%;
     padding: 10px;
     margin-bottom: 5px;
@@ -292,7 +292,7 @@ header {
     border-radius: 4px;
 }
 
-.input[type="radio"] {
+input[type="radio"] {
     margin-right: 5px;
 }
 
