@@ -257,6 +257,35 @@ window.onclick = function(event) {
 
 //реализовать добавление и удаление из избранного (возможно по аналогии с корзиной, но пока не точно)
 
+function openCheckoutForm() {
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    
+    document.getElementById('cart-modal').style.display = 'none';
+    document.getElementById('form-modal').style.display = 'block';
+}
+
+function closeCheckoutForm() {
+    document.getElementById('form-modal').style.display = 'none';
+}
+
+function closeOrderSuccessModal() {
+    document.getElementById('order-success-modal').style.display = 'none';
+}
+
+function placeOrder() {
+    document.getElementById('form-modal').style.display = 'none';
+    
+    cart = [];
+    saveCartToStorage();
+    updateCart();
+    
+    document.getElementById('checkout-form').reset();
+    
+    document.getElementById('order-success-modal').style.display = 'block';
+}
 
 function changeContent(page) {
     const startContent = document.getElementById('startContent');
