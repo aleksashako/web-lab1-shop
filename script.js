@@ -43,7 +43,7 @@ const things = [{
     {
     id: 7,
     image: 'img/ugly-chair.jpg',
-    title: "Ugly and Uncomfortable Chair",
+    title: "Uncomfortable Chair",
     description: "try it",
     price: 7,  
     },
@@ -243,13 +243,13 @@ function changeContent(page) {
     switch (page) {
         case 'store':
             contentDiv.innerHTML = `
-                <h2>about store</h2>
+                <h2>About store</h2>
                 <p>welcome to the Ugly Things Store! we believe that ugly doesn't mean unwanted.</p>
             `;
             break;
         case 'new':
             contentDiv.innerHTML = `
-                <h2>new arrivals</h2>
+                <h2>New Arrivals</h2>
                 <p>no new staff as for now(</p>
             `;
             break;
