@@ -108,15 +108,15 @@ function goBackToStart() {
 }
 
 function renderThings() {
-    const thingList = document.getElementById('thing-list');
+    let thingList = document.getElementById('thing-list');
     thingList.innerHTML = '';
     
     things.forEach(thing => {
-        const isFavorited = favs.some(fav => fav.id === thing.id);
-        const favoriteClass = isFavorited ? 'active' : '';
-        const favoriteSymbol = isFavorited ? '♥' : '♡';
+        let isFavorited = favs.some(fav => fav.id === thing.id);
+        let favoriteClass = isFavorited ? 'active' : '';
+        let favoriteSymbol = isFavorited ? '♥' : '♡';
         
-        const thingCard = document.createElement('li');
+        let thingCard = document.createElement('li');
         thingCard.className = 'thing-card';
         thingCard.innerHTML = `
             <div class="th-image" style="background-image: url('${thing.image}')"></div>
@@ -133,15 +133,15 @@ function renderThings() {
     
     document.querySelectorAll('.add-to-cart-button').forEach(button => {
         button.addEventListener('click', function() {
-            const thingId = parseInt(this.getAttribute('data-id'));
+            let thingId = parseInt(this.getAttribute('data-id'));
             addToCart(thingId);
         });
     });
     
     document.querySelectorAll('.add-to-fav-button').forEach(button => {
         button.addEventListener('click', function() {
-            const thingId = parseInt(this.getAttribute('data-id'));
-            toggleFavorite(thingId);
+            let thingId = parseInt(this.getAttribute('data-id'));
+            toggleFavorite(thingId, this);
         });
     });
 
@@ -153,7 +153,7 @@ function addToCart(thingId) {
     const thing = things.find(t => t.id === thingId);
     if (!thing) return;
 
-    const existingItem = cart.find(item => item.id === thingId);
+    let existingItem = cart.find(item => item.id === thingId);
 
     if (existingItem) {
         existingItem.quantity += 1;
@@ -178,7 +178,7 @@ function removeFromCart(thingId) {
 }
 
 function updateQuantity(thingId, change) {
-    const item = cart.find(item => item.id === thingId);
+    let item = cart.find(item => item.id === thingId);
     if (!item) return;
     
     item.quantity += change;
@@ -203,11 +203,11 @@ function calculateTotal() {
 }
 
 function updateCart() {
-    const cartCount = document.getElementById('cart-count');
-    const totalPrice = document.getElementById('total-price');
-    const cartItems = document.getElementById('cart-items');
+    let cartCount = document.getElementById('cart-count');
+    let totalPrice = document.getElementById('total-price');
+    let cartItems = document.getElementById('cart-items');
     
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
     
     totalPrice.textContent = calculateTotal().toFixed(2);
@@ -241,9 +241,9 @@ function updateCart() {
 
 function updateAddToCartButtons() {
     document.querySelectorAll('.add-to-cart-button').forEach(button => {
-        const thingId = parseInt(button.getAttribute('data-id'));
-        const cartItem = cart.find(item => item.id === thingId);
-        const quantity = cartItem ? cartItem.quantity : 0;
+        let thingId = parseInt(button.getAttribute('data-id'));
+        let cartItem = cart.find(item => item.id === thingId);
+        let quantity = cartItem ? cartItem.quantity : 0;
         
         let countSpan = button.querySelector('.item-count');
         
@@ -274,7 +274,7 @@ function loadCartFromStorage() {
 }
 
 function openCartModal() {
-    const modal = document.getElementById('cart-modal');
+    let modal = document.getElementById('cart-modal');
     if (modal.style.display === 'block') {
         modal.style.display = 'none';
     } else {
@@ -283,7 +283,7 @@ function openCartModal() {
 }
 
 function openFavModal() {
-    const modal = document.getElementById('fav-modal');
+    let modal = document.getElementById('fav-modal');
     if (modal.style.display === 'block') {
         modal.style.display = 'none';
     } else {
@@ -292,7 +292,7 @@ function openFavModal() {
 }
 
 window.onclick = function(event) {
-    const modals = document.getElementsByClassName('modal');
+    let modals = document.getElementsByClassName('modal');
     for (let modal of modals) {
         if (event.target === modal) {
             modal.style.display = 'none';
