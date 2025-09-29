@@ -207,7 +207,7 @@ function updateCart() {
     let totalPrice = document.getElementById('total-price');
     let cartItems = document.getElementById('cart-items');
     
-    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
     
     totalPrice.textContent = calculateTotal().toFixed(2);
@@ -241,9 +241,9 @@ function updateCart() {
 
 function updateAddToCartButtons() {
     document.querySelectorAll('.add-to-cart-button').forEach(button => {
-        let thingId = parseInt(button.getAttribute('data-id'));
-        let cartItem = cart.find(item => item.id === thingId);
-        let quantity = cartItem ? cartItem.quantity : 0;
+        const thingId = parseInt(button.getAttribute('data-id'));
+        const cartItem = cart.find(item => item.id === thingId);
+        const quantity = cartItem ? cartItem.quantity : 0;
         
         let countSpan = button.querySelector('.item-count');
         
@@ -274,7 +274,7 @@ function loadCartFromStorage() {
 }
 
 function openCartModal() {
-    let modal = document.getElementById('cart-modal');
+    const modal = document.getElementById('cart-modal');
     if (modal.style.display === 'block') {
         modal.style.display = 'none';
     } else {
@@ -283,7 +283,7 @@ function openCartModal() {
 }
 
 function openFavModal() {
-    let modal = document.getElementById('fav-modal');
+    const modal = document.getElementById('fav-modal');
     if (modal.style.display === 'block') {
         modal.style.display = 'none';
     } else {
@@ -292,7 +292,7 @@ function openFavModal() {
 }
 
 window.onclick = function(event) {
-    let modals = document.getElementsByClassName('modal');
+    const modals = document.getElementsByClassName('modal');
     for (let modal of modals) {
         if (event.target === modal) {
             modal.style.display = 'none';
