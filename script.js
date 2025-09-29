@@ -70,6 +70,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function changeContent(page) {
+    let startContent = document.getElementById('startContent');
+    let contentDiv = document.getElementById('content');
+    
+    startContent.style.display = 'none';
+    contentDiv.style.display = 'block';
+    
+    switch (page) {
+        case 'store':
+            contentDiv.innerHTML = `
+                <h2>About store</h2>
+                <p>welcome to the Ugly Things Store! we believe that ugly doesn't mean unwanted.</p>
+            `;
+            break;
+        case 'new':
+            contentDiv.innerHTML = `
+                <h2>New Arrivals</h2>
+                <p>no new staff as for now(</p>
+            `;
+            break;
+        case 'catalog':
+            goBackToStart();
+            return; 
+        default:
+            contentDiv.innerHTML = '<h2>sorry, page not found!</h2>';
+    }
+
+}
+
+function goBackToStart() {
+    let startContent = document.getElementById('startContent');
+    let contentDiv = document.getElementById('content');
+    
+    contentDiv.style.display = 'none';
+    startContent.style.display = 'block';
+}
+
 function renderThings() {
     const thingList = document.getElementById('thing-list');
     thingList.innerHTML = '';
@@ -290,46 +327,8 @@ function placeOrder() {
     cart = [];
     saveCartToStorage();
     updateCart();
-    updateAddToCartButtons();
     
     document.getElementById('checkout-form').reset();
     
     document.getElementById('order-success-modal').style.display = 'block';
-}
-
-function changeContent(page) {
-    const startContent = document.getElementById('startContent');
-    const contentDiv = document.getElementById('content');
-    
-    startContent.style.display = 'none';
-    contentDiv.style.display = 'block';
-    
-    switch (page) {
-        case 'store':
-            contentDiv.innerHTML = `
-                <h2>About store</h2>
-                <p>welcome to the Ugly Things Store! we believe that ugly doesn't mean unwanted.</p>
-            `;
-            break;
-        case 'new':
-            contentDiv.innerHTML = `
-                <h2>New Arrivals</h2>
-                <p>no new staff as for now(</p>
-            `;
-            break;
-        case 'catalog':
-            goBackToStart();
-            return; 
-        default:
-            contentDiv.innerHTML = '<h2>sorry, page not found!</h2>';
-    }
-
-}
-
-function goBackToStart() {
-    const startContent = document.getElementById('startContent');
-    const contentDiv = document.getElementById('content');
-    
-    contentDiv.style.display = 'none';
-    startContent.style.display = 'block';
 }
