@@ -172,6 +172,7 @@ function removeFromCart(thingId) {
     cart = cart.filter(item => item.id !== thingId);
     saveCartToStorage();
     updateCart();
+    updateAddToCartButtons();
 }
 
 function updateQuantity(thingId, change) {
@@ -185,6 +186,7 @@ function updateQuantity(thingId, change) {
     } else {
         saveCartToStorage();
         updateCart();
+        updateAddToCartButtons();
     }
 }
 
