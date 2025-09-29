@@ -243,7 +243,7 @@ function updateAddToCartButtons() {
         const cartItem = cart.find(item => item.id === thingId);
         const quantity = cartItem ? cartItem.quantity : 0;
         
-        const countSpan = button.querySelector('.item-count');
+        let countSpan = button.querySelector('.item-count');
         
         if (quantity > 0) {
             if (!countSpan) {
