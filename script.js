@@ -319,6 +319,7 @@ function placeOrder() {
     cart = [];
     saveCartToStorage();
     updateCart();
+    updateAddToCartButtons();
     
     document.getElementById('checkout-form').reset();
     
