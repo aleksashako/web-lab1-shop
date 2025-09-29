@@ -133,19 +133,17 @@ function renderThings() {
     
     document.querySelectorAll('.add-to-cart-button').forEach(button => {
         button.addEventListener('click', function() {
-            let thingId = parseInt(this.getAttribute('data-id'));
+            const thingId = parseInt(this.getAttribute('data-id'));
             addToCart(thingId);
         });
     });
     
     document.querySelectorAll('.add-to-fav-button').forEach(button => {
         button.addEventListener('click', function() {
-            let thingId = parseInt(this.getAttribute('data-id'));
+            const thingId = parseInt(this.getAttribute('data-id'));
             toggleFavorite(thingId, this);
         });
     });
-
-    updateAddToCartButtons();
 }
 
 
@@ -153,7 +151,7 @@ function addToCart(thingId) {
     const thing = things.find(t => t.id === thingId);
     if (!thing) return;
 
-    let existingItem = cart.find(item => item.id === thingId);
+    const existingItem = cart.find(item => item.id === thingId);
 
     if (existingItem) {
         existingItem.quantity += 1;
