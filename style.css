@@ -159,26 +159,6 @@ header {
     margin-left: 5px;
 }
 
-.form {
-  width: 400px;
-}
-
-.fieldset {
-  margin: 0 0 20px;
-  padding: 20px 15px;
-  border: 1px solid #cc9fed;
-}
-
-.button-cart {
-  padding: 10px 24px;
-  border: none;
-  border-radius: 7px;
-  color: #fff;
-  font-weight: bold;
-  background: #47cf73;
-  cursor: pointer;
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -280,6 +260,55 @@ header {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+form {
+    width: 100%;
+}
+
+fieldset {
+    margin: 0 0 10px;
+    padding: 10px 15px;
+    border: 1px solid #1c0d47;
+    border-radius: 4px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #1c0d47;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0a031e;
 }
 
 @media (max-width: 768px) {
