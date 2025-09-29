@@ -189,6 +189,31 @@ function updateCart() {
         `;
         cartItems.appendChild(cartItemElement);
     });
+
+    updateAddToCartButtons();
+}
+
+function updateAddToCartButtons() {
+    document.querySelectorAll('.add-to-cart-button').forEach(button => {
+        const thingId = parseInt(button.getAttribute('data-id'));
+        const cartItem = cart.find(item => item.id === thingId);
+        const quantity = cartItem ? cartItem.quantity : 0;
+        
+        let countSpan = button.querySelector('.item-count');
+        
+        if (quantity > 0) {
+            if (!countSpan) {
+                countSpan = document.createElement('span');
+                countSpan.className = 'item-count';
+                button.appendChild(countSpan);
+            }
+            countSpan.textContent = quantity;
+        } else {
+            if (countSpan) {
+                countSpan.remove();
+            }
+        }
+    });
 }
 
 function saveCartToStorage() {
