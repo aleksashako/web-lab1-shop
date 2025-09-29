@@ -375,12 +375,20 @@ function updateFav() {
                 <h4>${item.title}</h4>
                 
             </div>
-            <div class="cart-item-controls">
-                <button class="remove-from-fav-btn" onclick="removeFromFavourites(${item.id})">remove</button>
+            <div class="fav-item-controls">
+                <button class="add-to-cart-button" data-id="${item.id}">Add to cart</button>
+                <button class="remove-from-fav-btn" onclick="removeFromFavourites(${item.id})">Remove</button>
             </div>
         `;
         favItems.appendChild(favItemElement);
     });
+    document.querySelectorAll('.add-to-cart-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const thingId = parseInt(this.getAttribute('data-id'));
+            addToCart(thingId);
+        });
+    });
+    updateAddToCartButtons();
 }
 
 function openCheckoutForm() {
