@@ -186,14 +186,8 @@ function updateQuantity(thingId, change) {
     } else {
         saveCartToStorage();
         updateCart();
+        updateAddToCartButtons();
     }
-}
-
-function clearCart() {
-    cart = []
-    updateCart();
-    saveCartToStorage();
-    updateAddToCartButtons();
 }
 
 function calculateTotal() {
