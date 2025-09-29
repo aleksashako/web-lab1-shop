@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
     renderThings();
     loadCartFromStorage();
     updateCart();
-    updateAddToCartButtons();
 
     document.getElementById('checkout-form').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -159,6 +158,7 @@ function clearCart() {
     cart = []
     updateCart();
     saveCartToStorage();
+    updateAddToCartButtons();
 }
 
 function calculateTotal() {
@@ -290,6 +290,7 @@ function placeOrder() {
     cart = [];
     saveCartToStorage();
     updateCart();
+    updateAddToCartButtons();
     
     document.getElementById('checkout-form').reset();
     
