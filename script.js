@@ -371,7 +371,6 @@ function updateFav() {
         const favItemElement = document.createElement('div');
         favItemElement.className = 'fav-item';
         favItemElement.innerHTML = `
-            <div class="fav-image" style="background-image: url('${item.image}')"></div>
             <div class="fav-item-info">
                 <h4>${item.title}</h4>
                 
