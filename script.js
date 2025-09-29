@@ -63,6 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
     renderThings();
     loadCartFromStorage();
     updateCart();
+
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        placeOrder();
+    });
 });
 
 function renderThings() {
