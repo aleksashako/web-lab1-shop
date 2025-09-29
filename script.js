@@ -107,6 +107,8 @@ function renderThings() {
             toggleFavorite(thingId);
         });
     });
+
+    updateAddToCartButtons();
 }
 
 
