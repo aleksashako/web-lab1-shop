@@ -262,54 +262,55 @@ header {
     cursor: pointer;
 }
 
-.form {
-    width: 100%;
+form {
+  width: 100%;
 }
 
-.fieldset {
-    margin: 0 0 10px;
-    padding: 10px 15px;
-    border: 1px solid #1c0d47;
-    border-radius: 4px;
+fieldset {
+  margin: 0 0 20px;
+  padding: 20px 15px;
+  border: 1px solid #1c0d47;
+  border-radius: 4px;
 }
 
-.legend {
-    padding: 0 10px;
-    font-weight: bold;
+legend {
+  padding: 0 10px;
+  font-weight: bold;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 input[type="text"] {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 input[type="radio"] {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 button[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background-color: #1c0d47;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.1em;
-    cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  background-color: #1c0d47;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
 }
 
 button[type="submit"]:hover {
-    background-color: #0a031e;
+  background-color: #0a031e;
 }
+
+
 
 @media (max-width: 768px) {
     .menu {
