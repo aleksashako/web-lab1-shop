@@ -170,6 +170,26 @@ header {
     margin-left: 5px;
 }
 
+.normal-btn {
+    padding: 10px 24px;
+    background-color: deepskyblue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    display: block; 
+    margin: 20px auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 140px;
+}
+
+.normal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 .modal {
     display: none;
     position: fixed;
